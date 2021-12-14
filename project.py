@@ -6,6 +6,8 @@ from datetime import datetime
 from telebot import types, TeleBot
 from telebot.types import Update
 from newsapi.newsapi_client import NewsApiClient
+import re
+import json
 
 def main():
     updater=Update(keys.API_KEY)
@@ -76,3 +78,15 @@ all_articles = newsapi.get_everything(q='bitcoin',
 # /v2/top-headlines/sources
 sources = newsapi.get_sources()
 print(top_headlines)
+
+import requests
+
+url = ('https://newsapi.org/v2/everything?'
+       'q=Apple&'
+       'from=2021-12-14&'
+       'sortBy=popularity&'
+       'apiKey=18b3064537594d28bccda78d7c20c1a7')
+
+response = requests.get(url)
+
+print(response.json())
