@@ -7,7 +7,7 @@ from telebot.types import Update
 from newsapi.newsapi_client import NewsApiClient
 from telegram.ext import *
 import requests
-from news import news
+from news import business_news, entertainment_news, news, science_news, sports_news, technology_news
 
 def main():
 	updater=Update(keys.API_KEY)
@@ -49,7 +49,46 @@ def command_news(message):
     else:
         bot.reply_to(message,"No news available")
 
+@bot.message_handler(commands=['business','Business'])
+def command_news(message):
+    data = business_news()
+    if isinstance(data,list):
+        bot.reply_to(message,"\n".join(data))
+    else:
+        bot.reply_to(message,"No news available")
 
+
+@bot.message_handler(commands=['entertainment'])
+def command_news(message):
+    data = entertainment_news()
+    if isinstance(data,list):
+        bot.reply_to(message,"\n".join(data))
+    else:
+        bot.reply_to(message,"No news available")
+
+@bot.message_handler(commands=['technology'])
+def command_news(message):
+    data = technology_news()
+    if isinstance(data,list):
+        bot.reply_to(message,"\n".join(data))
+    else:
+        bot.reply_to(message,"No news available")
+
+@bot.message_handler(commands=['science'])
+def command_news(message):
+    data = science_news()
+    if isinstance(data,list):
+        bot.reply_to(message,"\n".join(data))
+    else:
+        bot.reply_to(message,"No news available")
+
+@bot.message_handler(commands=['sports'])
+def command_news(message):
+    data = sports_news()
+    if isinstance(data,list):
+        bot.reply_to(message,"\n".join(data))
+    else:
+        bot.reply_to(message,"No news available")
 bot.polling()    
     
 
