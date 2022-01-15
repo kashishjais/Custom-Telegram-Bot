@@ -26,6 +26,10 @@ def hello(message):
 def intro(message):
     bot.send_message(message.chat.id,'I am Volter Bot')
 
+@bot.message_handler(commands=['choose'])
+def intro(message):
+    bot.send_message(message.chat.id,'enter news category')
+
 @bot.message_handler(commands=['instaid'])
 def instaid(message):
     bot.reply_to(message,'to use this bot,send your username')    

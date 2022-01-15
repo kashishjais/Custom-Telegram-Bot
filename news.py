@@ -7,10 +7,9 @@ def news():
 	news_article=[]
 	for arti in article:
 		news_article.append(arti['title'])
-	return news_article
-	for i in range(len(news_article)):
-		print(i+1,news_article[i])	
-
+	for i,arti in enumerate(news_article):
+		return news_article
+	
 def business_news():
 	main_url="https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey="+keys.news_API
 	news=requests.get(main_url).json()
