@@ -28,13 +28,16 @@ def entertainment_news():
 	main_url="https://newsapi.org/v2/top-headlines?country=in&category=entertainment&apiKey="+keys.news_API
 	news=requests.get(main_url).json()
 	article=news["articles"]
+	link=news["url"]
 	news_article=[]
 	heads=[]
 	for arti in article:
 		news_article.append(arti['title'])
 	for i,arti in enumerate(news_article):
 		heads.append(f'💃🏻{i}-->{arti}\n')
-	return heads	
+	heads.append(link)	
+	return heads
+		
 
 def technology_news():
 	main_url="https://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey="+keys.news_API
