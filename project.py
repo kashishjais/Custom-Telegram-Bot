@@ -15,9 +15,12 @@ def main():
 	
 
 bot=telebot.TeleBot(keys.API_KEY,threaded=False)
-@bot.message_handler(commands=['Greet'])
+@bot.message_handler(commands=['Greet','greet'])
 def greet(message):
     bot.reply_to(message,'hiii! this is Quirkyy')
+@bot.message_handler(commands=['intro','who are you?'])
+def greet(message):
+    bot.reply_to(message,'I am  Quirkyy,your Bot assisstent🐱‍💻')    
 
 @bot.message_handler(commands=['Hello','hello','hii','Hii'])
 def hello(message):
@@ -26,6 +29,11 @@ def hello(message):
 @bot.message_handler(commands=['?'])
 def intro(message):
     bot.send_message(message.chat.id,'I am Volter Bot')
+
+@bot.message_handler(commands=['who created you?','creator'])
+def greet(message):
+    bot.reply_to(message,'Kashish Jaiswal👩🏻\n\nBtech CSE💻(2019-23)\n\nPython Data Science project🐍')
+
 
 @bot.message_handler(commands=['choose'])
 def intro(message):
