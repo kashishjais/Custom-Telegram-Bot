@@ -2,12 +2,10 @@ import os
 import string
 import telebot
 import constants as keys
-import telegram.ext
 from telebot import types, TeleBot
 from telebot.types import Update
 from newsapi.newsapi_client import NewsApiClient
 from telegram.ext import *
-import requests
 from news import business_news, entertainment_news, news, science_news, sports_news, technology_news
 
 def main():

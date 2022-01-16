@@ -1,7 +1,6 @@
 import requests
 import constants as keys
-import pyshorteners
-s = pyshorteners.Shortener()
+
 
 def news():
 	main_url="https://newsapi.org/v2/top-headlines?country=in&apiKey="+keys.news_API

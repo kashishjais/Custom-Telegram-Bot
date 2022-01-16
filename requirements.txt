@@ -1,8 +1,2 @@
-os
-string
 telebot
-telegram.ext
-telebot
-telebot.types
-newsapi.newsapi_client
-requests
+newsapi
