@@ -27,10 +27,14 @@ Display latest news headlines for the following caregories:📰
 -Sports
 Fetch Instagram Id link by user name📲
 
-Screenshots 📸
+
 		
 Start & Help & Keyboard:
 /choose
+/greet
+/intro
+/news
+/instaid
 /Business
 /Entertainment
 /Technology
@@ -58,7 +62,9 @@ How to scrap a site
 How HTTP/HTTPS works
 Function Decorators
 isinstance, Dictionaries,list, imports
+How to deploy on heroku
+Polling and web hooks
 
 
-License 📑
+
 
